@@ -1,0 +1,124 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+	<title>AngularForm</title>
+  	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" type="text/css" href="statics/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="statics/css/style.css">
+	<link rel="stylesheet" type="text/css" href="statics/css/font.min.css">
+	<link rel="stylesheet" type="text/css" href="statics/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="statics/css/chartist.min.css">
+	<link rel="stylesheet" type="text/css" href="statics/css/material.css">
+
+</head>
+<body class="second-bg" ng-controller="indexCtrl as ctrl">
+
+	<div class="main-alert">
+		<div class="alert alert-success" role="alert">
+			Thanks! Your data has submitted. <span aria-hidden="true" class="float-right font-weight-bold btn-close" ng-click="ctrl.closeAlert()">&times;</span>
+		</div>
+	</div>
+	
+
+	<div class="container mt-5 mb-5 mb-sm-0">
+		<div class="principal shadow">
+			<div class="row no-gutters">
+				<div class="col-md-6 main-bg main-padding">
+					<h3 class="font-weight-light text-center text-white">Discover the most exciting places on our planet</h3>
+					<img src="statics/imgs/img-form.JPG" class="mx-auto d-block main-img">
+				</div>
+				<div class="col-md-6 second-bg main-padding">
+						<div class="btn-group" role="group" aria-label="Basic example">
+							<button type="button" class="btn btn-secondary btn-circle-left btn-sm font-weight-bold">SING UP</button>
+							<button type="button" class="btn btn-secondary btn-circle-right btn-sm font-weight-bold btn-outline-secondary">LOG IN</button>
+						</div>
+					<h3 class="font-weight-light text-center text-white">Sing up for beta</h3>
+					<form name="main-form" ng-submit="ctrl.confirm()">
+						<div class="form-group">
+							<label for="username" class="main-label">Username</label>
+							<input type="text" class="form-control light-color" id="username" required placeholder="Username" name="username" ng-model="ctrl.username">
+							<small ng-show="!ctrl.username" class="form-text text-muted">This is required.</small>
+						</div>
+						<div class="form-group">
+							<label for="password" class="main-label">Password</label>
+							<input type="password" class="form-control light-color" id="password" required placeholder="Password" name="password" ng-model="ctrl.password">
+							<small ng-show="!ctrl.password" class="form-text text-muted">This is required.</small>
+						</div>
+						<div class="form-group">
+							<label for="email" class="main-label">E-mail</label>
+							<input type="email" class="form-control light-color" id="email" required placeholder="your email goes here..." name="email" ng-model="ctrl.email">
+							<small ng-show="!ctrl.email" class="form-text text-muted">This is required.</small>
+						</div>
+						<div class="form-group form-check">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1" ng-model="ctrl.agree">
+							<span class="checkmark"></span>
+							<label class="form-check-label small light-color" for="exampleCheck1">I agree to all statements included in <a href="#" class="text-secondary">Terms of service</a></label>
+						</div>
+						<div class="row">
+							<div class="col-sm-5">
+								<button class="btn btn-warning btn-form btn-circle col-sm-12 mb-3" ng-disabled="!ctrl.username || !ctrl.password || !ctrl.email || !ctrl.agree" type="submit">SING UP</button>
+							</div>
+							<div class="col-sm-5 text-center">
+								<a href="#" class="small text-secondary">Loren ipsun dotem...</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content rounded-0 second-bg">
+				<div class="modal-header border-0">
+					<h5 class="modal-title text-light text-center font-weight-light" id="exampleModalLabel">Confirm your informations</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body border-0">
+					<div class="row">
+						<div class="col-sm-6">
+							<label for="username" class="main-label">Username</label>
+							<p class="text-light">{{ctrl.username}}</p>
+						</div>
+						<div class="col-sm-6">
+							<label for="username" class="main-label">Password</label>
+							<p class="text-light">**********</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<label for="username" class="main-label">Email</label>
+							<p class="text-light">{{ctrl.email}}</p>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-sm-4 offset-sm-8">
+							<button type="button" class="btn btn-warning btn-form btn-circle col-sm-12" ng-click="ctrl.submit()">SUBMIT</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<!--core-->
+<script src="statics/plugins/angular.min.js"></script>
+<script src="statics/plugins/angular-route.min.js"></script>
+<script src="statics/plugins/jquery.min.js"></script>
+<script src="statics/plugins/bootstrap.min.js"></script>
+<script src="statics/plugins/bootstrap.bundle.min.js"></script>
+<script src="statics/plugins/scroll.js"></script>
+
+<!-- controllers -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/form/index.js"></script>
+
+</html>

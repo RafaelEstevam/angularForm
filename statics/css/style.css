@@ -1,0 +1,171 @@
+body {
+  background-color: #eee;
+}
+
+/*colors*/
+
+.main-color{
+  color: #ff6900 !important;
+}
+
+.main-bg{
+  background-color: #ff6900 !important;
+}
+
+.second-color{
+  color: #222222 !important;
+}
+
+.second-bg{
+  background-color: #222222 !important;
+}
+
+.light-color{
+  color: #ccc !important;
+}
+
+/*--------------------------*/
+/*MAIN CLASS*/
+/*--------------------------*/
+
+.principal{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.main-img{
+  width: 80%;
+}
+
+.main-padding{
+  padding: 80px 50px !important;
+}
+
+.main-label{
+  font-size: 10px;
+  color: #555;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/*--------------------------*/
+/*BUTTON CLASS*/
+/*--------------------------*/
+
+.btn-group{
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.btn-circle{
+  border-radius: 1000px;
+}
+
+.btn-circle-left, .btn-circle-right{
+  font-size: 10px !important;
+}
+
+.btn-circle-left{
+  border-radius: 1000px 0px 0px 1000px;
+}
+
+.btn-circle-right{
+  border-radius: 0px 1000px 1000px 0px;
+}
+
+.btn-form{
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/*--------------------------*/
+/*FORM CLASS*/
+/*--------------------------*/
+
+.form-control{
+  border: 0px solid transparent;
+  border-bottom: 2px solid #555;
+  background-color: transparent;
+  border-radius: 0px;
+}
+
+.form-control:focus, .form-control:active{
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.form-check-input{
+  position: relative;
+  z-index: 1000;
+  opacity: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  height: 13px;
+  width: 13px;
+  background-color: #eee;
+  border-radius: 2px;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #ffc107;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid #222222;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/*-------------------------*/
+/*alert*/
+/*-------------------------*/
+
+.main-alert{
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  display: inline-block;
+  opacity: 0;
+  z-index: 0;
+  transition: linear all 0.2s;
+}
+
+.alert{
+  z-index: 0;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.main-alert.active{
+  z-index: 1000;
+  opacity: 1;
+}
+
+.btn-close{
+  cursor: pointer;
+}
